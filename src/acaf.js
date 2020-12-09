@@ -5,8 +5,15 @@ import 'bootstrap';
 import 'bootstrap/js/dist/modal';
 import 'bootstrap-table';
 import 'tableexport.jquery.plugin';
+
 var Plotly = require('plotly.js-basic-dist');
-import '@fortawesome/fontawesome-free';
+
+import html2PDF from 'jspdf-html2canvas';
+
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/regular'
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-table/dist/bootstrap-table.min.css';
 import './acaf.css';
@@ -135,6 +142,21 @@ function calculateStats(data, models) {
 
 }
 
+window.exportPDF = function () {
+
+    var statsdiv = document.getElementById("stats-div");
+
+    html2PDF(statsdiv, {
+        jsPDF: {
+            format: 'a4',
+        },
+        imageType: 'image/jpeg',
+        output: './pdf/acaf_report.pdf'
+    })
+
+}
+
+
 /**
  * Parses ACAF string from file "upload"
  * 
@@ -191,12 +213,12 @@ function parseData(data) {
     var $table = $('#table');
     $table.show();
     $table.bootstrapTable('destroy');
-    $table.bootstrapTable({data: tableData});
+    $table.bootstrapTable({ data: tableData });
     $table.bootstrapTable('hideColumn', 'testDir');
     $table.bootstrapTable('hideColumn', 'metadata');
 
     $('#loading').modal('hide');
-    console.log("Hide end");
+    $('#exportPDFbtn').show();
 }
 
 /**
@@ -230,5 +252,6 @@ $(function () {
 
     $('#table').hide();
     $('#stats-div').hide();
+    $('#exportPDFbtn').hide();
 
 });
