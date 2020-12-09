@@ -1,4 +1,24 @@
 /**
+ * Library Imports
+ */
+import 'bootstrap';
+import 'bootstrap/js/dist/modal';
+import 'bootstrap-table';
+import 'tableexport.jquery.plugin';
+
+var Plotly = require('plotly.js-basic-dist');
+
+import html2PDF from 'jspdf-html2canvas';
+
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/regular'
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-table/dist/bootstrap-table.min.css';
+import './acaf.css';
+
+/**
  * A suite of tests
  */
 class TestSuite {
@@ -78,7 +98,6 @@ function calculateStats(data, models) {
     });
 
     data.forEach(test => {
-        console.log("test result:: " + test.result);
 
         if (test.result == "Passed") {
             success++;
@@ -123,6 +142,21 @@ function calculateStats(data, models) {
 
 }
 
+window.exportPDF = function () {
+
+    var statsdiv = document.getElementById("stats-div");
+
+    html2PDF(statsdiv, {
+        jsPDF: {
+            format: 'a4',
+        },
+        imageType: 'image/jpeg',
+        output: './pdf/acaf_report.pdf'
+    })
+
+}
+
+
 /**
  * Parses ACAF string from file "upload"
  * 
@@ -130,8 +164,6 @@ function calculateStats(data, models) {
  * 
  */
 function parseData(data) {
-    console.log("parseData")
-
 
     const dataArr = data.split("\n");
     console.log("Length: " + dataArr.length)
@@ -179,20 +211,26 @@ function parseData(data) {
     calculateStats(tableData, models);
 
     var $table = $('#table');
+    $table.show();
+    $table.bootstrapTable('destroy');
     $table.bootstrapTable({ data: tableData });
     $table.bootstrapTable('hideColumn', 'testDir');
     $table.bootstrapTable('hideColumn', 'metadata');
-    $table.bootstrapTable('hideLoading');
+
+    $('#loading').modal('hide');
+    $('#exportPDFbtn').show();
 }
 
 /**
  * Handles the initial file "upload"
  */
-function handleFile() {
+window.handleFile = function () {
 
-    var $table = $('#table');
-    $table.show();
-    $table.bootstrapTable('showLoading');
+    $('#loading').modal('show');
+    $('#table').hide();
+    // If any data is in the table, remove it (for loading new file without refreshing page)
+    //$('#table').bootstrapTable('removeAll');
+    $('#stats-div').hide();
 
     try {
         var myFile = $('#fileInput').prop('files')[0];
@@ -210,11 +248,10 @@ function handleFile() {
 /**
  * jQuery Ready when page loads
  */
-$(document).ready(function () {
-    console.log("READY")
+$(function () {
 
     $('#table').hide();
     $('#stats-div').hide();
-
+    $('#exportPDFbtn').hide();
 
 });
