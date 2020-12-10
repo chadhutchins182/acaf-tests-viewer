@@ -13,7 +13,7 @@ module.exports = merge(common, {
         path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-        new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })
+        new BundleAnalyzerPlugin({ token: process.env.$BUNDLE_ANALYZER_TOKEN })
     ]
 });
 
