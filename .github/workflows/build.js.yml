@@ -17,7 +17,6 @@ jobs:
         node-version: '15.x'
       env:
         BUNDLE_ANALYZER_TOKEN: ${{ secrets.BUNDLE_ANALYZER_TOKEN }}
+        CI: true
     - run: npm ci
     - run: npm run build:prod --if-present
-      env:
-        CI: true
