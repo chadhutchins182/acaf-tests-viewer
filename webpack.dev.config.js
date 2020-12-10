@@ -5,20 +5,19 @@ var dotenv = require('dotenv').config({ path: __dirname + '/.env' });
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
+const bat = '"' + process.env.BUNDLE_ANALYZER_TOKEN + '"';
+console.log("BAT: "+bat);
+
 module.exports = merge(common, {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
         static: [
-            path.resolve(__dirname, 'dist')
+            path.resolve('./dist')
         ],
-        compress: true,
-        port: 9000
+        port: 9000,
     },
     plugins: [
-        new webpack.DefinePlugin({
-            "process.env": dotenv.parsed
-        }),
-        new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })
+        new BundleAnalyzerPlugin({ token: bat }),
     ]
 });

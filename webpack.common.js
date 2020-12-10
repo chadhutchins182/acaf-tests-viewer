@@ -29,6 +29,6 @@ module.exports = {
             Modal: 'exports-loader?Modal!bootstrap/js/dist/modal',
             Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
             Util: 'exports-loader?Util!bootstrap/js/dist/util'
-        })
+        }),
     ]
 };
