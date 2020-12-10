@@ -2,7 +2,12 @@
 
 name: Run Webpack Build
 
-on: [push, pull_request]
+on: 
+  push:
+      branches-ignore:
+        - master 
+  pull_request:
+    
 
 env:
   BUNDLE_ANALYZER_TOKEN: ${{ secrets.BUNDLE_ANALYZER_TOKEN }}
@@ -20,4 +25,4 @@ jobs:
       with:
         node-version: '15.x'
     - run: npm ci
-    - run: npm run build:prod --if-present
+    - run: npm run build:ci --if-present
