@@ -4,6 +4,10 @@ name: Run Webpack Build
 
 on: [push, pull_request]
 
+env:
+  BUNDLE_ANALYZER_TOKEN: ${{ secrets.BUNDLE_ANALYZER_TOKEN }}
+  CI: true
+
 jobs:
   build:
 
@@ -15,8 +19,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '15.x'
-      env:
-        BUNDLE_ANALYZER_TOKEN: ${{ secrets.BUNDLE_ANALYZER_TOKEN }}
-        CI: true
     - run: npm ci
     - run: npm run build:prod --if-present
