@@ -5,7 +5,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 
-console.log("TEST ENV: "+JSON.stringify(process.env));
+console.log("TEST ENV: " + JSON.stringify(process.env));
 
 module.exports = merge(common, {
     mode: 'production',
@@ -13,9 +13,6 @@ module.exports = merge(common, {
     output: {
         filename: 'acaf.js',
         path: path.resolve(__dirname, 'dist'),
-    },
-    plugins: [
-        new BundleAnalyzerPlugin({ token: process.env.BUNDLE_ANALYZER_TOKEN })
-    ]
+    }
 });
 
