@@ -18,7 +18,7 @@ Use the __Upload ACAF Tests File__ button to upload a ACAF Tests log file.
 
 ### GitHub Releases Bundle
 
-The [releases](https://github.com/chadhutchins182/acaf-tests-viewer/releases) bundles on GitHub contain the complete distribution. Simply unzip/untar and open index.html.
+The [releases](https://github.com/chadhutchins182/acaf-tests-viewer/releases) bundles on GitHub contain the complete distribution. Simply unzip and open index.html.
 
 ### From repo
 
