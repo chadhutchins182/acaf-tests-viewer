@@ -41,8 +41,7 @@ jobs:
           draft: false
           prerelease: false
       - name: Create zip file of dist
-      - uses: actions/checkout@v2
-      - uses: papeloto/action-zip@v1
+        uses: papeloto/action-zip@v1
         with:
             files: dist/ README.md
             dest:  acaf_v${{ github.ref }}.zip
