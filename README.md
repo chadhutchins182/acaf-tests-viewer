@@ -26,7 +26,7 @@ Use the __Upload ACAF Tests File__ button to upload a ACAF Tests log file.
 
 ## Installing <a name = "installing"></a>
 
-### GitHub Releases Bundle
+### GitHub Releases Bundle :dog: (This is the way)
 
 The [releases](https://github.com/chadhutchins182/acaf-tests-viewer/releases) bundles on GitHub contain the complete distribution. Simply unzip and open index.html.
 
@@ -45,4 +45,6 @@ Use the files located in `/dist` folder.
 This code utilizes [webpack](https://webpack.js.org). While not required, you should be somewhat familiar with how it works.
 
 1. `npm i` for installing libraries
-2. `npm run build` for building the distribution
+2. `npm run build:prod` for building the distribution 
+    * `npm run build:ci` currently does the same as `build:prod`
+    * `npm run build:dev` will open up a development webserver for testing
