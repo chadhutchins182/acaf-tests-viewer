@@ -1,5 +1,15 @@
 # ACAF Tests Viewer
 
+<div align="center">
+
+![Run Webpack Build](https://github.com/chadhutchins182/acaf-tests-viewer/workflows/Run%20Webpack%20Build/badge.svg)
+![CodeQL](https://github.com/chadhutchins182/acaf-tests-viewer/workflows/CodeQL/badge.svg)
+[![GitHub Open Issues](https://img.shields.io/github/issues-raw/chadhutchins182/acaf-tests-viewer)](https://github.com/chadhutchins182/acaf-tests-viewer/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/chadhutchins182/acaf-tests-viewer)](https://github.com/chadhutchins182/acaf-tests-viewer/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
 ## Table of Contents
 
 - [About](#about)
