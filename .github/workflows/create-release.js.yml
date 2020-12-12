@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}        
+      - run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}        
         with:
           fetch-depth: 0
       - name: Check tag ref
