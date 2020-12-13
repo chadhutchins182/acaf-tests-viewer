@@ -18,7 +18,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Tag name
-      - run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Check tag ref
         env:
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
