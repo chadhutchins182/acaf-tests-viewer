@@ -6,7 +6,6 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 const bat = '"' + process.env.BUNDLE_ANALYZER_TOKEN + '"';
-console.log("BAT: "+bat);
 
 module.exports = merge(common, {
     mode: 'development',
