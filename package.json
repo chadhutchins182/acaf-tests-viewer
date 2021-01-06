@@ -1,6 +1,6 @@
 {
   "name": "acaf-tests-viewer",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "ACAF Tests Viewer, parses and displays the test data log files from ACAF.",
   "private": true,
   "scripts": {
