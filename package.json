@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/chadhutchins182/acaf-tests-viewer#readme",
   "devDependencies": {
-    "@bundle-analyzer/webpack-plugin": "^0.5.1",
     "css-loader": "^5.0.1",
     "dotenv-webpack": "^6.0.0",
     "exports-loader": "^1.1.1",
