@@ -2,8 +2,9 @@
 
 <div align="center">
 
-![Run Webpack Build](https://github.com/chadhutchins182/acaf-tests-viewer/workflows/Run%20Webpack%20Build/badge.svg)
-![CodeQL](https://github.com/chadhutchins182/acaf-tests-viewer/workflows/CodeQL/badge.svg)
+[![Run Webpack Build](https://github.com/chadhutchins182/acaf-tests-viewer/actions/workflows/build.js.yml/badge.svg)](https://github.com/chadhutchins182/acaf-tests-viewer/actions/workflows/build.js.yml)
+[![CodeQL](https://github.com/chadhutchins182/acaf-tests-viewer/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/chadhutchins182/acaf-tests-viewer/actions/workflows/codeql-analysis.yml)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/chadhutchins182/acaf-tests-viewer.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/chadhutchins182/acaf-tests-viewer/alerts/)
 [![GitHub Open Issues](https://img.shields.io/github/issues-raw/chadhutchins182/acaf-tests-viewer)](https://github.com/chadhutchins182/acaf-tests-viewer/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/chadhutchins182/acaf-tests-viewer)](https://github.com/chadhutchins182/acaf-tests-viewer/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
