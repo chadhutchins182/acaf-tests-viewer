@@ -136,7 +136,7 @@ function calculateStats(data, models) {
                 size: 24
             }
         }
-    }
+    }//lgtm [js/automatic-semicolon-insertion]
 
     Plotly.newPlot('stat-chart', data, layout, { responsive: true });
 
@@ -166,7 +166,7 @@ window.exportPDF = function () {
 function parseData(data) {
 
     const dataArr = data.split("\n");
-    console.log("Length: " + dataArr.length)
+    console.log("Length: " + dataArr.length) //lgtm [js/automatic-semicolon-insertion]
 
     let tests = [];
     let suites = [];
